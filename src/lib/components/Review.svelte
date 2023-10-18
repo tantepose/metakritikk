@@ -24,6 +24,7 @@
 
     <h2>
         {item.title}
+        
         {#if totalScore() >= 8}
             🔥
         {:else if totalScore() >= 7}
@@ -38,8 +39,9 @@
     <ul>
         {#each item.reviews as review}
             <li>
+                💬
                 <a href={review.url}>{review.author}: {review.score}/{review.maxScore}</a> 
-                <i>("{review.snippet}")</i> 
+                <i>({review.snippet})</i> 
             </li>
         {/each}
     </ul>
