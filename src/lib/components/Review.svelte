@@ -10,8 +10,8 @@
 
         // regne ut snittet av alle poengene
         let totalScore = scores.reduce((a, b) => a + b, 0) / scores.length // https://www.logilax.com/javascript-calculate-average/
-        // gjøre om snittet til X av 10
-        totalScore = totalScore * 10
+        // gjøre om snittet til prosent
+        totalScore = totalScore * 100
         // runde av snittet til riktige decimaler
         totalScore = Number((totalScore).toFixed(0)); // 0 = ingen decimaler
 
@@ -23,18 +23,18 @@
 <div>
 
     <h2>
-        {item.title}
+        <a href="/tittel/{item.title}">{item.title}</a>
         
-        {#if totalScore() >= 8}
+        {#if totalScore() >= 80}
             🔥
-        {:else if totalScore() >= 7}
+        {:else if totalScore() >= 65}
             🍿
-        {:else if totalScore() <= 3}
+        {:else if totalScore() <= 50}
             💩
         {/if}
     </h2>
 
-    <h3>{totalScore()} / 10</h3>
+    <h3>{totalScore()}%</h3>
 
     <ul>
         {#each item.reviews as review}
