@@ -3,16 +3,14 @@
 	export let data
 </script>
 
-<h1>metakritikk.no</h1>
-<p>({data.items.length} titler)</p>
-
-{#each data.items as item}
-    <Review item={item} />
-{/each}
+<div>
+    {#each data.items as item}
+        <Review item={item} />
+    {/each}
+</div>
 
 <style>
-    :global(body)
-    {
+    :global(body) {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         background-color: #90ADC6;
     }

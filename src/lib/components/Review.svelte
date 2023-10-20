@@ -21,10 +21,8 @@
 </script>
 
 <div>
-
     <h2>
         <a href="/tittel/{item.title}">{item.title}</a>
-        
         {#if totalScore() >= 80}
             🔥
         {:else if totalScore() >= 65}
@@ -34,28 +32,36 @@
         {/if}
     </h2>
 
-    <h3>{totalScore()}%</h3>
-
-    <ul>
-        {#each item.reviews as review}
-            <li>
-                💬
-                <a href={review.url}>{review.author}: {review.score}/{review.maxScore}</a> 
-                <i>({review.snippet})</i> 
-            </li>
-        {/each}
-    </ul>
+    <div class="more">
+        <div>
+            <h3>{totalScore()}%</h3>
+        </div>  
+    <div>
+        <ul>
+            {#each item.reviews as review}
+                <li>
+                    💬
+                    <a href={review.url}>{review.author}: {review.score}/{review.maxScore}</a> 
+                    <i>({review.snippet})</i> 
+                </li>
+            {/each}
+        </ul>
+    </div>
+</div>
 
 </div>
 
 <style>
     div {
-        text-align: center;
         background-color: #333652;
         color: #E9EAEC;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 10px;
         margin: 10px;
+    }
+
+    .more {
+        display: flex;
     }
 
     a {
@@ -65,17 +71,17 @@
     h2 {
         color: #FAD02C;
         font-size: 2em;
-        margin-bottom: 5px;
+        margin: 10px;
+        text-align: center;
     }
 
     h3 {
-        font-size: 2em;
-        margin-top: 5px;
+        font-size: 4em;
+        margin: 10px;
     }
 
     ul {
         list-style-type: none;
-        text-align: left;
     }
 
 </style>
