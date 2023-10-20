@@ -1,5 +1,5 @@
 <script>
-	export let data;
+	export let data
     import Review from '$lib/components/Review.svelte'
 </script>
 

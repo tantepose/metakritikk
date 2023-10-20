@@ -1,12 +1,12 @@
 <script>
     import Review from '$lib/components/Review.svelte'
-    import { items } from '$lib/database.js'
+	export let data
 </script>
 
 <h1>metakritikk.no</h1>
-<p>({items.length} titler)</p>
+<p>({data.items.length} titler)</p>
 
-{#each items as item}
+{#each data.items as item}
     <Review item={item} />
 {/each}
 
