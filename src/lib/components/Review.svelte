@@ -1,41 +1,16 @@
 <script>
     export let item
-
-    function totalScore () {
-        // gjøre om hver poenggivning til skala fra 0 til 1
-        let scores = []
-        item.reviews.forEach(review => {
-            scores.push(review.score / review.maxScore)
-        });
-
-        // regne ut snittet av alle poengene
-        let totalScore = scores.reduce((a, b) => a + b, 0) / scores.length // https://www.logilax.com/javascript-calculate-average/
-        // gjøre om snittet til prosent
-        totalScore = totalScore * 100
-        // runde av snittet til riktige decimaler
-        totalScore = Number((totalScore).toFixed(0)); // 0 = ingen decimaler
-
-        return totalScore
-    }
+    import Score from '$lib/components/Score.svelte'
 
 </script>
 
 <div>
     <h2>
         <a href="/tittel/{item.title}">{item.title}</a>
-        {#if totalScore() >= 80}
-            🔥
-        {:else if totalScore() >= 65}
-            🍿
-        {:else if totalScore() <= 50}
-            💩
-        {/if}
     </h2>
 
-    <div class="more">
-        <div>
-            <h3>{totalScore()}%</h3>
-        </div>  
+    <Score totalScore={item.totalScore} />
+
     <div>
         <ul>
             {#each item.reviews as review}
@@ -49,19 +24,18 @@
     </div>
 </div>
 
-</div>
-
 <style>
     div {
         background-color: #333652;
         color: #E9EAEC;
+
         border-radius: 10px;
         padding: 10px;
         margin: 10px;
-    }
 
-    .more {
         display: flex;
+        align-items: center;
+        flex-direction: column
     }
 
     a {
@@ -75,13 +49,10 @@
         text-align: center;
     }
 
-    h3 {
-        font-size: 4em;
-        margin: 10px;
-    }
-
     ul {
         list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
 
 </style>
