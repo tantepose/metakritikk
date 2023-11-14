@@ -13,5 +13,9 @@
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@fontsource-variable/playfair-display": "^5.0.18",
+		"@fontsource/alice": "^5.0.8"
+	}
 }

@@ -103,4 +103,16 @@ const items = [
     }
 ]
 
+// lag totalScore for hver item
+items.forEach(item => {
+    // lag array med alle scores fra 0 til 1, i stedet for max og min
+    let scores = []
+    item.reviews.forEach(review => {
+        scores.push(review.score / review.maxScore)
+    });
+
+    // regne ut snittet av alle poengene
+    item.totalScore = scores.reduce((a, b) => a + b, 0) / scores.length // https://www.logilax.com/javascript-calculate-average/
+})
+
 export { items }

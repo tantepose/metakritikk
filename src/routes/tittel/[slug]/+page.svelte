@@ -3,6 +3,16 @@
     import Review from '$lib/components/Review.svelte'
 </script>
 
+<div>
 <Review item={data} />
+<a href="/">TILBAKE</a>
 
-<a href="/">tilbake</a>
+</div>
+
+<style>
+    div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        }
+</style>

@@ -12,7 +12,7 @@
         circle.beginPath()
         const circleMax = totalScore * 2 *  Math.PI // hvor langt rundt?
         circle.arc(50, 50, 40, 0, circleMax) // context.arc(x, y, r, sAngle, eAngle, counterclockwise)
-        circle.lineWidth = 10;
+        circle.lineWidth = 15;
         
         // fargelegge sirkel og tekst
         let scoreColor
@@ -25,18 +25,10 @@
             scoreColor = "#37fa2c"
         } 
 
-        circle.strokeStyle = scoreColor
-        scoreText.style.color = scoreColor
+        circle.strokeStyle = "#3D405B"
+        // scoreText.style.color = scoreColor
 
         circle.stroke()
-
-        // const circleBackground = circleBackgroundCanvas.getContext("2d")
-        // circleBackground.beginPath()
-        // circleBackground.arc(50, 50, 40, 0, 2 *  Math.PI) // context.arc(x, y, r, sAngle, eAngle, counterclockwise)
-        // circleBackground.lineWidth = 10;
-        // circleBackground.strokeStyle = "grey"
-        // circleBackground.stroke()
-
 
     })
 
@@ -52,20 +44,12 @@
         width="100%" 
         height="100%"
     />
-
-    <!-- <canvas 
-        bind:this={circleBackgroundCanvas} 
-        width="100%" 
-        height="100%"
-    /> -->
-
-    
 </div>  
 
 <style>
     h3 {
         margin: 0;
-        font-size: 2em;   
+        font-size: 2em;
         position: absolute;
         top: 50%;
         left: 50%;

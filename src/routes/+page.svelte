@@ -1,6 +1,6 @@
 <script>
     import Review from '$lib/components/Review.svelte'
-	export let data
+	export let data // få data fra page.js
 </script>
 
 <div>
@@ -10,8 +10,14 @@
 </div>
 
 <style>
-    :global(body) {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        background-color: #90ADC6;
+    div {
+        display: flex;
+        align-items: center;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+
     }
 </style>

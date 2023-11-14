@@ -5,7 +5,6 @@ import { items } from '$lib/database.js'
 export function load({ params }) {
 	if (params.slug) {
         const title = items.find(({ title }) => title === params.slug);
-        console.log(title)
 		return title
 	}
 

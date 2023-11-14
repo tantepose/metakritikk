@@ -4,7 +4,7 @@
 
 </script>
 
-<div>
+<div class="review">
     <h2>
         <a href="/tittel/{item.title}">{item.title}</a>
     </h2>
@@ -16,8 +16,8 @@
             {#each item.reviews as review}
                 <li>
                     💬
-                    <a href={review.url}>{review.author}: {review.score}/{review.maxScore}</a> 
-                    <i>({review.snippet})</i> 
+                    <a href={review.url}>{review.author}: <b>{review.score}/{review.maxScore}</b></a> 
+                    <i>«{review.snippet}»</i> 
                 </li>
             {/each}
         </ul>
@@ -25,28 +25,28 @@
 </div>
 
 <style>
-    div {
-        background-color: #333652;
-        color: #E9EAEC;
-
-        border-radius: 10px;
+    .review {
+        /* border-radius: 20px; */
+        /* border: 1px solid black; */
         padding: 10px;
-        margin: 10px;
+        margin: 20px;
 
         display: flex;
         align-items: center;
-        flex-direction: column
-    }
+        flex-direction: column;
 
-    a {
-        color: #FAD02C;
+        max-width: 350px;
     }
 
     h2 {
-        color: #FAD02C;
+        font-family: 'Playfair Display Variable', sans-serif;
         font-size: 2em;
-        margin: 10px;
         text-align: center;
+        margin: 10px;
+    }
+
+    h2 a {
+        color: #3D405B;
     }
 
     ul {
