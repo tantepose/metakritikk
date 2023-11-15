@@ -8,27 +8,34 @@
 
     // sirkel må tegnes  fra onmount for at getContext skal funke
     onMount(()=>{
+
+        // tegne sirkel
         const circle = circleCanvas.getContext("2d")
         circle.beginPath()
         const circleMax = totalScore * 2 *  Math.PI // hvor langt rundt?
         circle.arc(50, 50, 40, 0, circleMax) // context.arc(x, y, r, sAngle, eAngle, counterclockwise)
-        circle.lineWidth = 15;
         
-        // fargelegge sirkel og tekst
-        let scoreColor
+        // fargelegge sirkel
+        // let scoreColor
         
-        if (totalScore < 0.5) {
-             scoreColor = "red"
-        } else if (totalScore < 0.7) {
-             scoreColor = "#FAD02C"
-        }  else if (totalScore > 0.7) {
-            scoreColor = "#37fa2c"
-        } 
+        // if (totalScore < 0.5) {
+        //      scoreColor = "red"
+        // } else if (totalScore < 0.7) {
+        //      scoreColor = "#FAD02C"
+        // }  else if (totalScore > 0.7) {
+        //     scoreColor = "#37fa2c"
+        // } 
 
-        circle.strokeStyle = "#3D405B"
+        circle.strokeStyle = "#3D405B" // scoreColor
         // scoreText.style.color = scoreColor
 
+        circle.lineCap = "round"
+        circle.lineWidth = 4
+
+        circle.setLineDash([20,8])
         circle.stroke()
+
+
 
     })
 
@@ -48,12 +55,14 @@
 
 <style>
     h3 {
+
+        font-weight: lighter;
         margin: 0;
-        font-size: 2em;
+        font-size: 2.5em;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -56%);
     }
 
     div {
@@ -62,7 +71,7 @@
     }
 
     canvas {
-        transform: rotate(270deg);
+        transform: rotate(45deg);
     }
 
 </style>
