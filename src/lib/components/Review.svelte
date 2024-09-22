@@ -16,7 +16,7 @@
             {#each item.reviews as review}
                 <li>
                     💬
-                    <a href={review.url}>{review.author}: <b>{review.score}/{review.maxScore}</b></a> 
+                    <a href={review.url} target="_blank">{review.author}: <b>{review.score}/{review.maxScore}</b></a> 
                     <i>«{review.snippet}»</i> 
                 </li>
             {/each}
@@ -53,6 +53,10 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
+    }
+
+    li {
+        padding: 5px;
     }
 
 </style>
